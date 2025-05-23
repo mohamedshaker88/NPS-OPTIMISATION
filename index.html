@@ -384,22 +384,245 @@
 
         <!-- Slide 6: Data Analysis -->
         <div class="slide">
-            <h2>📊 Survey Response Analysis</h2>
+            <h2>📊 Current NPS Performance (May 1st - 23rd)</h2>
             
-            <div class="data-placeholder">
-                <h3>INSERT YOUR DATA HERE</h3>
-                <p>Add charts/tables showing:</p>
-                <ul style="text-align: left; max-width: 500px; margin: 0 auto;">
-                    <li>Customer response distribution (0-10 scores)</li>
-                    <li>Promoter/Passive/Detractor percentages</li>
-                    <li>Current NPS score</li>
-                    <li>Comparison of satisfaction vs. recommendation scores</li>
-                    <li>Examples of high satisfaction but low recommendation scores</li>
-                </ul>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #2d3748; margin-bottom: 15px;">📈 Current Results</h3>
+                    <div style="font-size: 1.1em; line-height: 2;">
+                        <p><strong>Surveys Submitted:</strong> 15.03% (1,207 responses)</p>
+                        <p><strong>Promoters (9-10):</strong> 951 (78.79%)</p>
+                        <p><strong>Passives (7-8):</strong> 117 (9.69%)</p>
+                        <p><strong>Detractors (0-6):</strong> 139 (11.52%)</p>
+                        <p><strong>Current tNPS Score:</strong> <span style="color: #26de81; font-weight: bold; font-size: 1.2em;">67.27</span></p>
+                    </div>
+                </div>
+                
+                <div style="background: #fff5f5; padding: 20px; border-radius: 10px; border: 2px solid #fed7d7;">
+                    <h3 style="color: #e53e3e; margin-bottom: 15px;">⚠️ The Passive Problem</h3>
+                    <div style="font-size: 1.1em; line-height: 2;">
+                        <p><strong>Jobs Completed:</strong> 8,033</p>
+                        <p><strong>Survey Responses:</strong> 1,207</p>
+                        <p><strong>Lost Potential:</strong> 117 Passives</p>
+                        <p style="color: #e53e3e;"><strong>If these were Promoters:</strong></p>
+                        <p style="color: #26de81; font-weight: bold;">tNPS would be: <span style="font-size: 1.2em;">76.95</span></p>
+                        <p style="color: #e53e3e;">That's <strong>+9.68 points lost!</strong></p>
+                    </div>
+                </div>
             </div>
             
-            <div class="center large-text" style="margin-top: 30px;">
-                <p><strong>Key Insight:</strong> Many customers who are satisfied (8-10 on satisfaction) give lower recommendation scores (7-8), making them Passives instead of Promoters.</p>
+            <div style="background: #e6fffa; padding: 25px; border-radius: 10px; border: 3px solid #38b2ac; margin: 20px 0;">
+                <h3 style="text-align: center; color: #2d3748; margin-bottom: 20px;">🧮 The REAL NPS Formula</h3>
+                <div style="text-align: center; font-size: 1.3em; font-weight: bold; color: #2d3748;">
+                    NPS = ((Promoters - Detractors) / (Promoters + Detractors + Passives)) × 100
+                </div>
+                <div style="text-align: center; margin-top: 15px; font-size: 1.1em; color: #4a5568;">
+                    Current: ((951 - 139) / (951 + 139 + 117)) × 100 = <strong style="color: #26de81;">67.27</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6B: Survey Data Examples -->
+        <div class="slide">
+            <h2>🔍 Real Survey Examples - The Disconnect</h2>
+            
+            <div style="background: #f7fafc; padding: 25px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="color: #2d3748; margin-bottom: 20px;">Example Survey Responses (Fabricated for Training)</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 15px; font-weight: bold; background: #2d3748; color: white; padding: 10px; border-radius: 5px;">
+                    <div>Recommendation</div>
+                    <div>Satisfaction</div>
+                    <div>Comments</div>
+                    <div>Type</div>
+                    <div>Impact</div>
+                    <div>Problem</div>
+                </div>
+                
+                <!-- Example 1 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
+                    <div style="font-weight: bold; color: #e53e3e;">8/10</div>
+                    <div style="font-weight: bold; color: #26de81;">10/10</div>
+                    <div>"Great service, very professional"</div>
+                    <div style="font-weight: bold; color: #f6ad55;">PASSIVE</div>
+                    <div style="color: #e53e3e;">NO HELP</div>
+                    <div>Happy customer = 0 points</div>
+                </div>
+                
+                <!-- Example 2 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
+                    <div style="font-weight: bold; color: #e53e3e;">7/10</div>
+                    <div style="font-weight: bold; color: #26de81;">9/10</div>
+                    <div>"Fixed my issue perfectly"</div>
+                    <div style="font-weight: bold; color: #f6ad55;">PASSIVE</div>
+                    <div style="color: #e53e3e;">NO HELP</div>
+                    <div>Satisfied customer = 0 points</div>
+                </div>
+                
+                <!-- Example 3 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #c6f6d5; border-radius: 5px;">
+                    <div style="font-weight: bold; color: #26de81;">9/10</div>
+                    <div style="font-weight: bold; color: #26de81;">10/10</div>
+                    <div>"Excellent work, will recommend"</div>
+                    <div style="font-weight: bold; color: #26de81;">PROMOTER</div>
+                    <div style="color: #26de81;">+1 POINT</div>
+                    <div>This helps NPS!</div>
+                </div>
+                
+                <!-- Example 4 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
+                    <div style="font-weight: bold; color: #e53e3e;">8/10</div>
+                    <div style="font-weight: bold; color: #26de81;">8/10</div>
+                    <div>"Good service, on time"</div>
+                    <div style="font-weight: bold; color: #f6ad55;">PASSIVE</div>
+                    <div style="color: #e53e3e;">NO HELP</div>
+                    <div>Another lost opportunity</div>
+                </div>
+                
+                <!-- Example 5 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fbb6ce; border-radius: 5px;">
+                    <div style="font-weight: bold; color: #e53e3e;">4/10</div>
+                    <div style="font-weight: bold; color: #e53e3e;">3/10</div>
+                    <div>"Technician was late, rude"</div>
+                    <div style="font-weight: bold; color: #e53e3e;">DETRACTOR</div>
+                    <div style="color: #e53e3e;">-1 POINT</div>
+                    <div>This hurts NPS</div>
+                </div>
+            </div>
+            
+            <div style="background: #fff5f5; padding: 20px; border-radius: 10px; border: 2px solid #fed7d7; margin-top: 20px;">
+                <h3 style="color: #e53e3e; text-align: center;">🚨 THE SHOCKING TRUTH</h3>
+                <p style="font-size: 1.2em; text-align: center; margin: 15px 0;">
+                    <strong>3 out of 5 customers above were satisfied (8-10 satisfaction)</strong><br>
+                    But only <strong>1 out of 5</strong> actually helped the technician's NPS score!
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 6C: Impact Analysis -->
+        <div class="slide">
+            <h2>📈 How Passives Dilute Your Score</h2>
+            
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="color: #2d3748; margin-bottom: 20px;">Scenario Analysis: Same Promoters & Detractors, Different Passive Counts</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+                    <!-- Scenario 1 -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <h4 style="color: #26de81; margin-bottom: 15px;">Scenario 1</h4>
+                        <div style="font-size: 0.9em; line-height: 1.6;">
+                            <p><strong>Promoters:</strong> 900</p>
+                            <p><strong>Detractors:</strong> 100</p>
+                            <p><strong>Passives:</strong> 0</p>
+                            <p><strong>Total:</strong> 1,000</p>
+                            <div style="background: #26de81; color: white; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                                <strong>NPS: 80.0</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 2 -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <h4 style="color: #f6ad55; margin-bottom: 15px;">Scenario 2</h4>
+                        <div style="font-size: 0.9em; line-height: 1.6;">
+                            <p><strong>Promoters:</strong> 900</p>
+                            <p><strong>Detractors:</strong> 100</p>
+                            <p><strong>Passives:</strong> 100</p>
+                            <p><strong>Total:</strong> 1,100</p>
+                            <div style="background: #f6ad55; color: white; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                                <strong>NPS: 72.7</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 3 -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <h4 style="color: #f093fb; margin-bottom: 15px;">Scenario 3</h4>
+                        <div style="font-size: 0.9em; line-height: 1.6;">
+                            <p><strong>Promoters:</strong> 900</p>
+                            <p><strong>Detractors:</strong> 100</p>
+                            <p><strong>Passives:</strong> 200</p>
+                            <p><strong>Total:</strong> 1,200</p>
+                            <div style="background: #f093fb; color: white; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                                <strong>NPS: 66.7</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 4 -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <h4 style="color: #e53e3e; margin-bottom: 15px;">Scenario 4</h4>
+                        <div style="font-size: 0.9em; line-height: 1.6;">
+                            <p><strong>Promoters:</strong> 900</p>
+                            <p><strong>Detractors:</strong> 100</p>
+                            <p><strong>Passives:</strong> 400</p>
+                            <p><strong>Total:</strong> 1,400</p>
+                            <div style="background: #e53e3e; color: white; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                                <strong>NPS: 57.1</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin-top: 30px; text-align: center;">
+                    <h3 style="color: #e53e3e; margin-bottom: 15px;">🔥 KEY INSIGHT</h3>
+                    <p style="font-size: 1.2em; line-height: 1.6;">
+                        <strong>Same number of happy customers (900 Promoters) and unhappy customers (100 Detractors)</strong><br>
+                        But adding Passives drops the score from <span style="color: #26de81; font-weight: bold;">80.0</span> to <span style="color: #e53e3e; font-weight: bold;">57.1</span><br>
+                        <span style="background: #fed7d7; padding: 5px 10px; border-radius: 5px; font-weight: bold;">That's a 22.9 point difference!</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6D: The Math Behind It -->
+        <div class="slide">
+            <h2>🧮 The Math: Why Every Passive Hurts</h2>
+            
+            <div style="background: #e6fffa; padding: 30px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="text-align: center; color: #2d3748; margin-bottom: 25px;">Understanding the NPS Formula Impact</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <h4 style="color: #2d3748; margin-bottom: 15px;">❌ Wrong Thinking:</h4>
+                        <div style="background: #fed7d7; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+                            <p>"Passives don't hurt because they're neutral"</p>
+                            <p style="font-style: italic;">"7-8 scores don't count, so they don't matter"</p>
+                        </div>
+                        
+                        <h4 style="color: #26de81; margin-bottom: 15px;">✅ Reality:</h4>
+                        <div style="background: #c6f6d5; padding: 15px; border-radius: 10px;">
+                            <p><strong>Passives dilute the denominator!</strong></p>
+                            <p>They increase total responses without adding to the numerator</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: #2d3748; margin-bottom: 15px;">Example Calculation:</h4>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #38b2ac;">
+                            <p style="margin-bottom: 10px;"><strong>Without Passives:</strong></p>
+                            <p style="font-family: monospace; background: #f7fafc; padding: 10px; border-radius: 5px;">
+                                NPS = (900 - 100) / 1000 × 100<br>
+                                NPS = 800 / 1000 × 100<br>
+                                <strong style="color: #26de81;">NPS = 80.0</strong>
+                            </p>
+                            
+                            <p style="margin: 15px 0 10px 0;"><strong>With 200 Passives:</strong></p>
+                            <p style="font-family: monospace; background: #f7fafc; padding: 10px; border-radius: 5px;">
+                                NPS = (900 - 100) / 1200 × 100<br>
+                                NPS = 800 / 1200 × 100<br>
+                                <strong style="color: #e53e3e;">NPS = 66.7</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #667eea; color: white; padding: 20px; border-radius: 10px; margin-top: 25px; text-align: center;">
+                    <h3 style="margin-bottom: 15px;">💡 The Solution</h3>
+                    <p style="font-size: 1.1em; line-height: 1.6;">
+                        Convert those satisfied Passives (7-8) into Promoters (9-10)<br>
+                        <strong>Use the script to educate customers about the impact!</strong>
+                    </p>
+                </div>
             </div>
         </div>
 
