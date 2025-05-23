@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPS Team Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 30px 0;
+            padding: 40px;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide:nth-child(1) { animation-delay: 0.1s; }
+        .slide:nth-child(2) { animation-delay: 0.2s; }
+        .slide:nth-child(3) { animation-delay: 0.3s; }
+        .slide:nth-child(4) { animation-delay: 0.4s; }
+        .slide:nth-child(5) { animation-delay: 0.5s; }
+        .slide:nth-child(6) { animation-delay: 0.6s; }
+        .slide:nth-child(7) { animation-delay: 0.7s; }
+        .slide:nth-child(8) { animation-delay: 0.8s; }
+        
+        h1 {
+            color: #4a5568;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #4a5568;
+            font-size: 1.4em;
+            margin: 20px 0 15px 0;
+        }
+        
+        .nps-formula {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3em;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .score-card {
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        
+        .score-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .detractor {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+        
+        .passive {
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+        }
+        
+        .promoter {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+        }
+        
+        .survey-questions {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            margin: 20px 0;
+        }
+        
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .important-question {
+            border: 3px solid #f093fb;
+            background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+            position: relative;
+        }
+        
+        .important-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #f093fb;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .scale {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: #e2e8f0;
+            border-radius: 25px;
+        }
+        
+        .scale-number {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .scale-number:hover {
+            background: #4c51bf;
+            transform: scale(1.2);
+        }
+        
+        .script-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .why-box {
+            background: #fff5f5;
+            border: 2px solid #fed7d7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .large-text {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f7fafc;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .data-placeholder {
+            background: #e2e8f0;
+            border: 2px dashed #a0aec0;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            color: #4a5568;
+            font-style: italic;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <h1>Understanding NPS & Improving Customer Feedback</h1>
+            <div class="center">
+                <p class="large-text">A Complete Guide for the NPS Team</p>
+                <p style="margin-top: 30px; font-size: 1.1em; color: #666;">Optimizing Technician Performance Through Strategic Customer Communication</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: What is NPS -->
+        <div class="slide">
+            <h2>What is NPS (Net Promoter Score)?</h2>
+            <div class="large-text">
+                <p><strong>NPS</strong> is a customer loyalty metric that measures how likely customers are to recommend your service to others.</p>
+                
+                <div class="nps-formula">
+                    NPS = % Promoters - % Detractors
+                </div>
+                
+                <p>It's measured on a scale of <span class="highlight">-100 to +100</span></p>
+                <p>• A score above 0 is considered good</p>
+                <p>• A score above 50 is excellent</p>
+                <p>• A score above 70 is world-class</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: How NPS is Calculated -->
+        <div class="slide">
+            <h2>How NPS is Calculated</h2>
+            
+            <div class="score-grid">
+                <div class="score-card detractor">
+                    <h3>DETRACTORS</h3>
+                    <p>Score: 0-6</p>
+                    <p>Unhappy customers who might damage your brand</p>
+                </div>
+                <div class="score-card passive">
+                    <h3>PASSIVES</h3>
+                    <p>Score: 7-8</p>
+                    <p>Satisfied but unenthusiastic customers</p>
+                </div>
+                <div class="score-card promoter">
+                    <h3>PROMOTERS</h3>
+                    <p>Score: 9-10</p>
+                    <p>Loyal customers who will promote your brand</p>
+                </div>
+            </div>
+            
+            <div class="center large-text">
+                <p><strong>Only Promoters (9-10) and Detractors (0-6) count in NPS calculation</strong></p>
+                <p>Passives (7-8) are neutral and don't affect the score</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: The Survey Questions -->
+        <div class="slide">
+            <h2>Our Customer Survey</h2>
+            
+            <div class="survey-questions">
+                <div class="question important-question">
+                    <div class="important-badge">NPS QUESTION</div>
+                    <h3>Question 1: Based on your recent [appointment type] experience, how likely are you to recommend Optimum to a friend or family member?</h3>
+                    <div class="scale">
+                        <span>Not at all likely</span>
+                        <div style="display: flex; gap: 5px;">
+                            <div class="scale-number">0</div>
+                            <div class="scale-number">1</div>
+                            <div class="scale-number">2</div>
+                            <div class="scale-number">3</div>
+                            <div class="scale-number">4</div>
+                            <div class="scale-number">5</div>
+                            <div class="scale-number">6</div>
+                            <div class="scale-number">7</div>
+                            <div class="scale-number">8</div>
+                            <div class="scale-number">9</div>
+                            <div class="scale-number">10</div>
+                        </div>
+                        <span>Extremely likely</span>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <h3>Question 2: Please rate your satisfaction with the service that [technician's name] provided.</h3>
+                    <div class="scale">
+                        <span>Very dissatisfied</span>
+                        <div style="display: flex; gap: 5px;">
+                            <div class="scale-number">0</div>
+                            <div class="scale-number">1</div>
+                            <div class="scale-number">2</div>
+                            <div class="scale-number">3</div>
+                            <div class="scale-number">4</div>
+                            <div class="scale-number">5</div>
+                            <div class="scale-number">6</div>
+                            <div class="scale-number">7</div>
+                            <div class="scale-number">8</div>
+                            <div class="scale-number">9</div>
+                            <div class="scale-number">10</div>
+                        </div>
+                        <span>Very satisfied</span>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <h3>Question 3: If you have any comments please explain below</h3>
+                    <p style="font-style: italic; color: #666;">Open text field for additional feedback</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Critical Question -->
+        <div class="slide">
+            <h2>🎯 The ONLY Question That Matters for NPS</h2>
+            
+            <div class="center">
+                <div class="script-box">
+                    <h3 style="color: white; margin-bottom: 20px;">CRITICAL UNDERSTANDING:</h3>
+                    <p class="large-text">Only Question #1 (the recommendation question) affects the technician's NPS score and determines if they're rated as Promoter, Passive, or Detractor.</p>
+                </div>
+                
+                <div class="why-box">
+                    <h3>❌ What DOESN'T Affect NPS:</h3>
+                    <ul>
+                        <li>Satisfaction rating (Question #2)</li>
+                        <li>Positive comments (Question #3)</li>
+                        <li>Overall customer happiness</li>
+                    </ul>
+                </div>
+                
+                <div class="large-text" style="margin-top: 30px;">
+                    <p><strong>This means:</strong> A customer can be 100% satisfied and leave glowing comments, but if they give a 7 or 8 on the recommendation question, the technician gets NO credit for NPS.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Data Analysis -->
+        <div class="slide">
+            <h2>📊 Survey Response Analysis</h2>
+            
+            <div class="data-placeholder">
+                <h3>INSERT YOUR DATA HERE</h3>
+                <p>Add charts/tables showing:</p>
+                <ul style="text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Customer response distribution (0-10 scores)</li>
+                    <li>Promoter/Passive/Detractor percentages</li>
+                    <li>Current NPS score</li>
+                    <li>Comparison of satisfaction vs. recommendation scores</li>
+                    <li>Examples of high satisfaction but low recommendation scores</li>
+                </ul>
+            </div>
+            
+            <div class="center large-text" style="margin-top: 30px;">
+                <p><strong>Key Insight:</strong> Many customers who are satisfied (8-10 on satisfaction) give lower recommendation scores (7-8), making them Passives instead of Promoters.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: The New Script -->
+        <div class="slide">
+            <h2>💬 The New Script - What to Say</h2>
+            
+            <div class="script-box">
+                <h3 style="color: white; margin-bottom: 15px;">When Customer Says: "Everything was fine," "It went well," "No issues," etc.</h3>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <p><strong>"Perfect! Quick favor — when the survey email comes, there's a question that asks 'How likely are you to recommend Optimum to a friend or family member?' Even though it says 'Optimum,' this score only affects your technician personally, not the company. Since he did good work today, could you give him a 9 or 10? Anything below 9 hurts him personally. Thanks!"</strong></p>
+                </div>
+            </div>
+            
+            <div class="center large-text">
+                <p><span class="highlight">Key Points:</span></p>
+                <ul>
+                    <li>Quote the exact survey question</li>
+                    <li>Clarify it affects the technician, not the company</li>
+                    <li>Explain that below 9 hurts the technician personally</li>
+                    <li>Ask for 9 or 10 specifically</li>
+                    <li>Keep it short and direct</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8: Why This Works -->
+        <div class="slide">
+            <h2>🎯 Why This Script is Effective</h2>
+            
+            <div class="large-text">
+                <h3>1. Addresses the Confusion</h3>
+                <p>Customers think "recommend Optimum" is about the company, but it actually affects the individual technician's performance review.</p>
+                
+                <h3>2. Creates Personal Connection</h3>
+                <p>When customers understand their score impacts a real person (their technician), they're more likely to give a fair score.</p>
+                
+                <h3>3. Sets Clear Expectations</h3>
+                <p>Explains that <span class="highlight">only 9 or 10 helps</span> - anything below 9 actually hurts the technician.</p>
+                
+                <h3>4. Quick and Respectful</h3>
+                <p>Customers don't want long explanations. This gets the point across in under 30 seconds.</p>
+                
+                <h3>5. Timing</h3>
+                <p>Used only when customers express satisfaction, so it feels natural and appropriate.</p>
+            </div>
+            
+            <div class="center" style="margin-top: 30px;">
+                <div class="script-box">
+                    <h3 style="color: white;">REMEMBER: Use this script IMMEDIATELY on every positive customer interaction!</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
