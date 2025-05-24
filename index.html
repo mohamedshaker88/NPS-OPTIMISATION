@@ -166,6 +166,7 @@
             padding: 10px;
             background: #e2e8f0;
             border-radius: 25px;
+            flex-wrap: wrap;
         }
         
         .scale-number {
@@ -179,11 +180,19 @@
             justify-content: center;
             font-weight: bold;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .scale-number:hover {
             background: #4c51bf;
             transform: scale(1.2);
+        }
+        
+        .scale-numbers {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .script-box {
@@ -242,6 +251,309 @@
             color: #4a5568;
             font-style: italic;
             margin: 20px 0;
+        }
+
+        /* Responsive Grid Layouts */
+        .responsive-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .responsive-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .responsive-grid-6 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* TABLET STYLES */
+        @media screen and (max-width: 1024px) {
+            .presentation-container {
+                padding: 15px;
+            }
+            
+            .slide {
+                padding: 30px;
+                margin: 20px 0;
+                min-height: auto;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            h3 {
+                font-size: 1.3em;
+            }
+
+            .responsive-grid-2 {
+                gap: 20px;
+            }
+
+            .responsive-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .responsive-grid-6 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            
+            .score-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .scale {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .scale-numbers {
+                order: 2;
+            }
+        }
+        
+        /* MOBILE STYLES */
+        @media screen and (max-width: 768px) {
+            .presentation-container {
+                padding: 10px;
+            }
+            
+            .slide {
+                padding: 20px;
+                margin: 15px 0;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+                margin: 15px 0 10px 0;
+            }
+            
+            .large-text {
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+
+            .responsive-grid-2 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .responsive-grid-4 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .responsive-grid-6 {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                font-size: 0.9em;
+            }
+            
+            .nps-formula {
+                font-size: 1.1em;
+                padding: 20px;
+            }
+            
+            .script-box {
+                padding: 20px;
+                font-size: 1em;
+            }
+            
+            .scale {
+                padding: 15px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .scale-numbers {
+                gap: 8px;
+                justify-content: center;
+            }
+            
+            .scale-number {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9em;
+            }
+            
+            .survey-questions {
+                padding: 15px;
+            }
+            
+            .question {
+                padding: 12px;
+                margin: 15px 0;
+            }
+            
+            .important-badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+
+            /* Make tables/data tables scroll horizontally on mobile */
+            .responsive-grid-6 > div {
+                padding: 8px;
+                font-size: 0.85em;
+                word-break: break-word;
+            }
+
+            /* Stack elements vertically on very small screens */
+            .why-box ul {
+                padding-left: 0;
+            }
+            
+            .why-box li {
+                margin: 8px 0;
+                padding: 8px;
+                font-size: 0.95em;
+            }
+        }
+
+        /* SMALL MOBILE STYLES */
+        @media screen and (max-width: 480px) {
+            .slide {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+                line-height: 1.3;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+                line-height: 1.4;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+            }
+
+            .responsive-grid-6 {
+                font-size: 0.8em;
+            }
+
+            .responsive-grid-6 > div {
+                padding: 6px;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .scale-numbers {
+                gap: 4px;
+            }
+            
+            .scale-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8em;
+            }
+            
+            .nps-formula {
+                font-size: 1em;
+                padding: 15px;
+            }
+            
+            .script-box {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+
+            /* Improve readability of data tables on very small screens */
+            .responsive-grid-6 > div:first-child,
+            .responsive-grid-6 > div:nth-child(2),
+            .responsive-grid-6 > div:nth-child(3),
+            .responsive-grid-6 > div:nth-child(4),
+            .responsive-grid-6 > div:nth-child(5),
+            .responsive-grid-6 > div:nth-child(6) {
+                font-weight: bold;
+                background: #2d3748;
+                color: white;
+            }
+        }
+
+        /* LANDSCAPE TABLET ADJUSTMENTS */
+        @media screen and (max-width: 1024px) and (orientation: landscape) {
+            .slide {
+                min-height: auto;
+                padding: 25px;
+            }
+
+            .responsive-grid-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .responsive-grid-6 {
+                grid-template-columns: repeat(6, 1fr);
+                font-size: 0.9em;
+            }
+        }
+
+        /* ACCESSIBILITY IMPROVEMENTS */
+        @media (prefers-reduced-motion: reduce) {
+            .slide {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            
+            .score-card {
+                transition: none;
+            }
+            
+            .scale-number {
+                transition: none;
+            }
+        }
+
+        /* TOUCH FRIENDLY IMPROVEMENTS */
+        @media (hover: none) and (pointer: coarse) {
+            .scale-number {
+                width: 40px;
+                height: 40px;
+                margin: 2px;
+            }
+            
+            .score-card:hover {
+                transform: none;
+            }
+            
+            .scale-number:hover {
+                transform: none;
+                background: #667eea;
+            }
         }
     </style>
 </head>
@@ -312,7 +624,7 @@
                     <h3>Question 1: Based on your recent [appointment type] experience, how likely are you to recommend Optimum to a friend or family member?</h3>
                     <div class="scale">
                         <span>Not at all likely</span>
-                        <div style="display: flex; gap: 5px;">
+                        <div class="scale-numbers">
                             <div class="scale-number">0</div>
                             <div class="scale-number">1</div>
                             <div class="scale-number">2</div>
@@ -333,7 +645,7 @@
                     <h3>Question 2: Please rate your satisfaction with the service that [technician's name] provided.</h3>
                     <div class="scale">
                         <span>Very dissatisfied</span>
-                        <div style="display: flex; gap: 5px;">
+                        <div class="scale-numbers">
                             <div class="scale-number">0</div>
                             <div class="scale-number">1</div>
                             <div class="scale-number">2</div>
@@ -386,7 +698,7 @@
         <div class="slide">
             <h2>📊 Current NPS Performance (May 1st - 23rd)</h2>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
+            <div class="responsive-grid-2">
                 <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
                     <h3 style="color: #2d3748; margin-bottom: 15px;">📈 Current Results</h3>
                     <div style="font-size: 1.1em; line-height: 2;">
@@ -429,7 +741,7 @@
             <div style="background: #f7fafc; padding: 25px; border-radius: 10px; margin: 20px 0;">
                 <h3 style="color: #2d3748; margin-bottom: 20px;">Example Survey Responses (Fabricated for Training)</h3>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 15px; font-weight: bold; background: #2d3748; color: white; padding: 10px; border-radius: 5px;">
+                <div class="responsive-grid-6" style="font-weight: bold; background: #2d3748; color: white; padding: 10px; border-radius: 5px;">
                     <div>Recommendation</div>
                     <div>Satisfaction</div>
                     <div>Comments</div>
@@ -439,7 +751,7 @@
                 </div>
                 
                 <!-- Example 1 -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
+                <div class="responsive-grid-6" style="margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
                     <div style="font-weight: bold; color: #e53e3e;">8/10</div>
                     <div style="font-weight: bold; color: #26de81;">10/10</div>
                     <div>"Great service, very professional"</div>
@@ -449,7 +761,7 @@
                 </div>
                 
                 <!-- Example 2 -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
+                <div class="responsive-grid-6" style="margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
                     <div style="font-weight: bold; color: #e53e3e;">7/10</div>
                     <div style="font-weight: bold; color: #26de81;">9/10</div>
                     <div>"Fixed my issue perfectly"</div>
@@ -459,7 +771,7 @@
                 </div>
                 
                 <!-- Example 3 -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #c6f6d5; border-radius: 5px;">
+                <div class="responsive-grid-6" style="margin-bottom: 10px; padding: 10px; background: #c6f6d5; border-radius: 5px;">
                     <div style="font-weight: bold; color: #26de81;">9/10</div>
                     <div style="font-weight: bold; color: #26de81;">10/10</div>
                     <div>"Excellent work, will recommend"</div>
@@ -469,7 +781,7 @@
                 </div>
                 
                 <!-- Example 4 -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
+                <div class="responsive-grid-6" style="margin-bottom: 10px; padding: 10px; background: #fed7d7; border-radius: 5px;">
                     <div style="font-weight: bold; color: #e53e3e;">8/10</div>
                     <div style="font-weight: bold; color: #26de81;">8/10</div>
                     <div>"Good service, on time"</div>
@@ -479,7 +791,7 @@
                 </div>
                 
                 <!-- Example 5 -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fbb6ce; border-radius: 5px;">
+                <div class="responsive-grid-6" style="margin-bottom: 10px; padding: 10px; background: #fbb6ce; border-radius: 5px;">
                     <div style="font-weight: bold; color: #e53e3e;">4/10</div>
                     <div style="font-weight: bold; color: #e53e3e;">3/10</div>
                     <div>"Technician was late, rude"</div>
@@ -505,7 +817,7 @@
             <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin: 20px 0;">
                 <h3 style="color: #2d3748; margin-bottom: 20px;">Scenario Analysis: Same Promoters & Detractors, Different Passive Counts</h3>
                 
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+                <div class="responsive-grid-4">
                     <!-- Scenario 1 -->
                     <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
                         <h4 style="color: #26de81; margin-bottom: 15px;">Scenario 1</h4>
@@ -581,7 +893,7 @@
             <div style="background: #e6fffa; padding: 30px; border-radius: 15px; margin: 20px 0;">
                 <h3 style="text-align: center; color: #2d3748; margin-bottom: 25px;">Understanding the NPS Formula Impact</h3>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div class="responsive-grid-2">
                     <div>
                         <h4 style="color: #2d3748; margin-bottom: 15px;">❌ Wrong Thinking:</h4>
                         <div style="background: #fed7d7; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
